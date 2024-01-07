@@ -12,9 +12,9 @@
   .header {
     padding: 80px;
     text-align: center;
-    background: #1abc9c;
+    background:#030208 ;
     color: white;
-  }
+}
   
   /* Increase the font size of the heading */
   .header h1 {
@@ -24,10 +24,11 @@
   /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
   .navbar {
     overflow: hidden;
-    background-color: #333;
-    position: sticky;
+    background-color:#030208;
     position: -webkit-sticky;
+    position: sticky;
     top: 0;
+    border-radius: 1%;
   }
   
   /* Style the navigation bar links */
@@ -49,7 +50,7 @@
   /* Change color on hover */
   .navbar a:hover {
     background-color: #ddd;
-    color: black;
+    color: #0F0928;
   }
   
   /* Active/current link */
