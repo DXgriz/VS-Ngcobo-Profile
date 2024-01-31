@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const skillDiv = document.createElement('div');
             skillDiv.classList.add('skill');
 
+            setTimeout(() => {
+                skillDiv.classList.add('slide-in');
+            }, 100);
+
             const skillHeading = document.createElement('h3');
             skillHeading.textContent = skill.name;
 
