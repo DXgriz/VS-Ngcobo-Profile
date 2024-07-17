@@ -1,62 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Profile Home</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="files\homeStyle.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swp"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="Files/homeStyle.css" />
+  <title>Profile Home</title>
+
+  <!---box icons link-->
+  <link rel="stylesheet" 
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <!---remix icons link-->
+  <link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/remicicon@3.5.0/fonts/remixicon.css">
+
 </head>
+
 <body>
+  <!-----------------------------------Header Section--------------------------------------------->
+  <section class="header">
+    <nav>
+      <a href="index.html" class="logo">Developer <span>Vuyani.</span></a>
 
-<div class="header">
-  <h1>Vuyani Siboniso Ngcobo</h1>
-  <p>Welcome to my profile. Get to know me better.</p>
-</div>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()">close</i>
+        <ul>
+          <li><a href="#content-profile">PROFILE</a></li>
+          <li><a href="#content-education">EDUCATION</a></li>
+          <li><a href="">EXPERIENCE</a></li>
+          <li><a href="#portfolio">PORTFOLIO</a></li>
+          <li><a href="">SKILLS & SERVICES</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#lifestyle">LIFESTYLE</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()">open</i>
+    </nav>
 
-<div class="navbar">
-  <a href="index.html" class="active">Home</a>
-  <a href="profile.html">Profile</a>
-  <a href="#">Contact</a>
-  <a href="#" class="right">Link</a>
-</div>
+    <div class="welcome-msg">
+      <h4>Hi There!</h4>
+      <h1>I'm <span>Vuyani Ngcobo</span></h1>
+      <p>Take a minute to know more about me.</p>
+      <a href="#content-profile" class="hero-btn">View Profile</a>
+      <a href="#contact" class="hero-btn">Hire me</a>
+      <a href="#contact" class="hero-btn">Download CV</a>
+    </div>
 
-<div class="row">
-  <div class="side">
-    <h2>About Vuyani</h2>
-    <h5>Profile Photo:</h5>
-    <div class="fakeimg" style="height:200px;">Profile Photo</div>
-    <p>Hello there! I'm Vuyani Ngcobo. Thank you for taking your time to view my profile.<br><br>
-       
-       I am a passionate and dedicated Full-Stack Software Developer based in Pretoria, Gauteng. 
-       With a background in Software Engineering, Data Science, Networking, and Database Management... 
-       
+    <div class="social">
+      <a href="#"><i class="ri-facebook-fill"></i></a>
+      <a href="#"><i class="ri-instagram-fill"></i></a>
+      <a href="#"><i class="ri-twitter-fill"></i></a>
+      <a href="#"><i class="ri-youtube-fill"></i></a>
+      <a href="#"><i class="ri-linkedin-fill"></i></a>
+    </div>
+  </section>
+  <!-----------------------------------Content - Profile Section--------------------------------------------->
+  <section class="content-profile" id="content-profile">
+    <h1>Profile Background</h1>
+    <h2>Who am I?</h2>
+    <p>
+      Hi! <br />
+      This is Vuyani Ngcobo, a
+      <strong>TUT Computer Science graduate</strong> - 2024.<br />
+      I am thrilled to have this opportunity to share a bit about myself with
+      you.<br /><br />
+
+      I am just a boy from Empangeni, deep rural KZN trying to make a
+      contribution to the evolution of technology and simultaneously change
+      peoples lives for better, solving their daily problems using the latter.
     </p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
-  </div>
-  <div class="main">
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  </div>
-</div>
+    <div class="row">
+      <div class="row-col">
+        <h3>My Values</h3>
+        <p>
+          In life, I find excitement in exploring new possibilities and
+          pushing boundaries. Whether its delving into innovative projects or
+          embracing unexpected challenges, I believe in the power of
+          continuous growth, and I believe in myself and my capabilities.<br /><br />
 
-<div class="footer">
- <footer>
-        <p>&copy; 2024 vuyani. All rights reserved.</p>
-    </footer>
-</div>
+          I am a technology enthusiast. I am curious and ambitious. Its a side
+          of me that adds a dash of creativity and uniqueness to my
+          perspective. I have been exposed to various environments in the
+          field of ICT, and i have been lucky to be involved with different
+          groups of people whom i have learnt a lot from tackling day to day
+          problems. I know my career is just starting now, and i am eager to
+          learn and share my knowledge and skills and contribute to solving
+          problems in the world through ICT.
+        </p>
+      </div>
 
+      <div class="row-col">
+        <h3>Why ICT or Technology</h3>
+        <p>
+          So, why Technology?<br />
+          Well, its not just about a career opportunity; Its about joining a
+          community that resonates with my values. Technology caught my eye
+          not only for its impressive track record and reviews from the
+          community of alumni. But also for its dynamic approach to focus on
+          scarce skills development which i believe is the the breakthrough
+          the youth of SA needs in this job competitive economy. I am eager to
+          immense myself in this environment and learn from the wealth of
+          experiences that technology offers.
+        </p>
+      </div>
+
+      <div class="row-col">
+        <h3>Future Aspirations and Career</h2>
+          <p>
+            As i look towards the future, i am excited about being the best data
+            engineer. well, its not just about the job. Data engineering is the
+            backbone of data-driven decision-making, transforming raw
+            information into valuable insights that drive progress and
+            innovation, so its about contributing meaningfully, making positive
+            impact and continuously evolving in the ever changing landscape.
+          </p>
+      </div>
+    </div>
+  </section>
+
+  <!-----------------------------------Content - Profile Section--------------------------------------------->
+  <section class="content-education" id="content-education">
+    <h1>Educational Background</h1>
+    <p>I started attending school in 2003, at UFasimba Primary School, which forms the base which is
+      my elementary school education, up until I graduated in 2010 (Grade 7).
+      During that stage I had been actively engaging and excelling in most
+      academic activities, and extra-mural activities. I have always been a
+      hard worker. I then started my high school education at Nomyaca High School
+      in 2011 up until 2015 that was my matriculation year. in 2016 I enrolled
+      at University of Zululand for a BSC in Applied Mathematics and Mathematics,
+      where despite all the efforts I put in my academics, I unfortunately
+      dropped out. That was not the end of my journey, through all the difficulties
+      I managed to enroll at Tshwane University of Technology (2021) in pursuit of my
+      Diploma in Computer Science, which I was able to conquer in record time (2023), with very strong
+      academic record. This is NOT the end of my journey, as I am planning to further my studies beyond that.
+
+    </p>
+    <h2>Tertiary Education</h2>
+
+    <div class="row">
+      <div class="tertiary-ed">
+        <h3>Tshwane University of Technology</h3>
+        <h4>Diploma in Computer Science</h4>
+        <h5>Emalahleni Campus - Witbank, Mpumalanga</h5>
+        <h6>2021 -2023</h6>
+        <p><strong>Relevant Coursework Includes:</strong></p>
+        <ul>
+          <li>Software Engineering & Software Development/Systems Development</li>
+          <li>Mobile Computing/Mobile Development</li>
+          <li>Internet Programming/Web Computing/Web Development</li>
+          <li>Database Programming</li>
+          <li>Information Security & Networking</li>
+          <li>Computer Architecture And Organisation/Operating Systems</li>
+          <li>Object-Oriented Programming</li>
+          <li>Applied Mathematics</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <h2>High School Education</h2>
+
+    <div class="row">
+      <div class="high-school-ed">
+        <h3>Nomyaca High School</h3>
+        <h4>National Senior Certificate (NSC/Matric)</h4>
+        <h5>Empangeni</h5>
+        <h6>(2011 -2015)</h6>
+
+        <p><strong>Major Subjects:</strong></p>
+        <ul>
+          <li>Mathematics</li>
+          <li>Physical Sciences</li>
+          <li>Life Sciences</li>
+          <li>Agricultural Sciences</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-----------------------------------Content - Experience Section--------------------------------------------->
+  <section class="content-experience">
+   
+  </section>
+  <!-----------------------------------LifeStyle - Community- Reviews Section--------------------------------------------->
+  <section class="lifestyle" id="lifestyle">
+    <h1>What People Say</h1>
+    <p>This is a community review section. Anyone, and everyone
+      is welcome to leave a review about Vuyani. Please tell the
+      community how do you know me. and then leave a message to let
+      everyone know what kind of a person you think I am. You choose
+      to give your name or remain anonymous. PLEASE DO NOT LEAVE ANY
+      MEANS OF COMMUNICATION HERE!!!! If you have something to say,
+      please visit the bottom of this page where you will be able to
+      express yourself regarding any encounter you may have had with me.
+    </p>
+    <div class="reviews">
+      <div class="row">
+        <div class="review-col">
+          <img src="Images/ProfilePicture.JPG" alt="user">
+          <div>
+            <p>The guy is super amazing!!! Fun to work with and super smart.</p>
+            <h6>Friend</h6>
+            <h3>Elon Musk</h3>
+          </div>
+        </div>
+
+        <div class="review-col">
+          <img src="Images/ProfilePicture.JPG" alt="user">
+          <div>
+            <p>I love the guy, He's open and fun.
+              I love the guy, He's open and fun.
+            </p>
+            <h6>Friend</h6>
+            <h3>Bill Gates</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-container">
+      <div class="review-form">
+        <h3>Write Your Review Below.</h3>
+        <form>
+          <label for="fullNames">Names: (optional)</label>
+          <input type="text" id="fullNames" name="fullNames">
+
+          <label for="relationship">Relationship: (friend, colleague, acquaintance etc..)</label>
+          <input type="text" id="relationship" name="relationship">
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <label for="image">Upload your Photo to let the community know its you. (optional)</label>
+          <input type="image" id="image" name="image" alt="profilePhoto">
+
+          <button type="submit" onclick="submitReview()">Comment</button>
+        </form>
+      </div>
+
+    </div>
+    
+  </section>
+
+
+  <!-------------------------------------Call to Action Section--------------------------->
+
+  <section class="contact" id="contact">
+    <h1>Got Business? Get In Touch.</h1>
+
+    <div class="review-form">
+      <h3>Write Your Review Below.</h3>
+      <form>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" onclick="submitReview()">Send Email</button>
+      </form>
+    </div>
+
+  </section>
+
+
+  <!-----------FOOTER------------>
+  <section class="cont-footer">
+    <div class="footer">
+      <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+      </div>
+      <p>&copy; 2024 Vuyani.</p>
+    </div>
+  </section>
+
+
+  <!-----------JavaScript------------>
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
 </body>
+
 </html>
