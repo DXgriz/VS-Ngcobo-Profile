@@ -13,94 +13,146 @@
   to leave un-linked even though it's technically public.
 -->
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Review Admin</title>
-<style>
-  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; }
-  #login { display: flex; flex-direction: column; gap: 10px; max-width: 320px; }
-  #login input { padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
-  #login button, .review-card button {
-    padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer;
-  }
-  #login button { background: #222; color: #fff; }
-  .review-card {
-    border: 1px solid #e2e2e2; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px;
-  }
-  .review-card .actions { display: flex; gap: 8px; margin-top: 10px; }
-  .approve-btn { background: #16794f; color: #fff; }
-  .reject-btn { background: #b3261e; color: #fff; }
-  #error { color: #b3261e; }
-</style>
-</head>
-<body>
-
-<h1>Review admin</h1>
-
-<div id="login">
-  <input type="email" id="email" placeholder="Email">
-  <input type="password" id="password" placeholder="Password">
-  <button onclick="login()">Log in</button>
-  <p id="error"></p>
-</div>
-
-<div id="dashboard" style="display:none;">
-  <p><button onclick="logout()">Log out</button></p>
-  <h2>Pending reviews</h2>
-  <div id="pending-list"><p>Loading...</p></div>
-</div>
-
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
-
-<script>
-  // === PASTE YOUR FIREBASE CONFIG HERE (same as reviews-snippet.html) ===
-  const FIREBASE_CONFIG = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID",
-  };
-
-  firebase.initializeApp(FIREBASE_CONFIG);
-  const auth = firebase.auth();
-  const db = firebase.firestore();
-  const storage = firebase.storage();
-
-  function login() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    auth.signInWithEmailAndPassword(email, password)
-      .catch((err) => { document.getElementById("error").textContent = err.message; });
-  }
-
-  function logout() { auth.signOut(); }
-
-  auth.onAuthStateChanged((user) => {
-    document.getElementById("login").style.display = user ? "none" : "flex";
-    document.getElementById("dashboard").style.display = user ? "block" : "none";
-    if (user) loadPending();
-  });
-
-  async function loadPending() {
-    const listEl = document.getElementById("pending-list");
-    const snapshot = await db.collection("reviews").where("status", "==", "pending").get();
-
-    if (snapshot.empty) {
-      listEl.innerHTML = "<p>No pending reviews.</p>";
-      return;
+  <meta charset="UTF-8">
+  <title>Review Admin</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 0 16px;
     }
 
-    listEl.innerHTML = "";
-    snapshot.forEach((doc) => {
-      const r = doc.data();
-      const card = document.createElement("div");
-      card.className = "review-card";
-      card.innerHTML = `
+    #login {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 320px;
+    }
+
+    #login input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    #login button,
+    .review-card button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #login button {
+      background: #222;
+      color: #fff;
+    }
+
+    .review-card {
+      border: 1px solid #e2e2e2;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+
+    .review-card .actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .approve-btn {
+      background: #16794f;
+      color: #fff;
+    }
+
+    .reject-btn {
+      background: #b3261e;
+      color: #fff;
+    }
+
+    #error {
+      color: #b3261e;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Review admin</h1>
+
+  <div id="login">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Log in</button>
+    <p id="error"></p>
+  </div>
+
+  <div id="dashboard" style="display:none;">
+    <p><button onclick="logout()">Log out</button></p>
+    <h2>Pending reviews</h2>
+    <div id="pending-list">
+      <p>Loading...</p>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+  <script>
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    // === PASTE YOUR FIREBASE CONFIG HERE (same as reviews-snippet.html) ===
+    const FIREBASE_CONFIG = {
+      apiKey: "AIzaSyAQ4QKikP29CrxEjvzgbggakNc2j1YTsDw",
+      authDomain: "my-profile-vs.firebaseapp.com",
+      projectId: "my-profile-vs",
+      storageBucket: "my-profile-vs.firebasestorage.app",
+      messagingSenderId: "369167978056",
+      appId: "1:369167978056:web:c8e2b500f9187b7cfc927d"
+    };
+
+    firebase.initializeApp(FIREBASE_CONFIG);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      auth.signInWithEmailAndPassword(email, password)
+        .catch((err) => { document.getElementById("error").textContent = err.message; });
+    }
+
+    function logout() { auth.signOut(); }
+
+    auth.onAuthStateChanged((user) => {
+      document.getElementById("login").style.display = user ? "none" : "flex";
+      document.getElementById("dashboard").style.display = user ? "block" : "none";
+      if (user) loadPending();
+    });
+
+    async function loadPending() {
+      const listEl = document.getElementById("pending-list");
+      const snapshot = await db.collection("reviews").where("status", "==", "pending").get();
+
+      if (snapshot.empty) {
+        listEl.innerHTML = "<p>No pending reviews.</p>";
+        return;
+      }
+
+      listEl.innerHTML = "";
+      snapshot.forEach((doc) => {
+        const r = doc.data();
+        const card = document.createElement("div");
+        card.className = "review-card";
+        card.innerHTML = `
         ${r.photoURL ? `<img src="${escapeHtml(r.photoURL)}" alt="" style="width:60px;height:60px;border-radius:50%;object-fit:cover;">` : ""}
         <strong>${escapeHtml(r.fullNames) || "Anonymous"}</strong>
         <div style="color:#666;font-size:0.85rem;">${escapeHtml(r.relationship || "")}</div>
@@ -110,30 +162,31 @@
           <button class="reject-btn">Reject</button>
         </div>
       `;
-      card.querySelector(".approve-btn").onclick = () => updateStatus(doc.id, "approved");
-      card.querySelector(".reject-btn").onclick = () => updateStatus(doc.id, "rejected", r.photoURL);
-      listEl.appendChild(card);
-    });
-  }
-
-  async function updateStatus(id, status, photoURL) {
-    if (status === "rejected") {
-      await db.collection("reviews").doc(id).delete();
-      if (photoURL) {
-        try { await storage.refFromURL(photoURL).delete(); } catch (e) { console.warn("Photo already gone", e); }
-      }
-    } else {
-      await db.collection("reviews").doc(id).update({ status });
+        card.querySelector(".approve-btn").onclick = () => updateStatus(doc.id, "approved");
+        card.querySelector(".reject-btn").onclick = () => updateStatus(doc.id, "rejected", r.photoURL);
+        listEl.appendChild(card);
+      });
     }
-    loadPending();
-  }
 
-  function escapeHtml(str) {
-    const div = document.createElement("div");
-    div.textContent = str;
-    return div.innerHTML;
-  }
-</script>
+    async function updateStatus(id, status, photoURL) {
+      if (status === "rejected") {
+        await db.collection("reviews").doc(id).delete();
+        if (photoURL) {
+          try { await storage.refFromURL(photoURL).delete(); } catch (e) { console.warn("Photo already gone", e); }
+        }
+      } else {
+        await db.collection("reviews").doc(id).update({ status });
+      }
+      loadPending();
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement("div");
+      div.textContent = str;
+      return div.innerHTML;
+    }
+  </script>
 
 </body>
+
 </html>
