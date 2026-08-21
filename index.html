@@ -5,19 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swp"
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="files/homeStyle.css" />
-  <title>Profile Home</title>
+  <title>VS Ngcobo - Profile Home</title>
 
-  <!---box icons link-->
-  <link rel="stylesheet" 
-  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-  <!---remix icons link-->
-  <link rel="stylesheet" 
-  href="https://cdn.jsdelivr.net/npm/remicicon@3.5.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
 
 </head>
 
@@ -28,7 +24,7 @@
       <a href="index.html" class="logo">Developer <span>Vuyani.</span></a>
 
       <div class="nav-links" id="navLinks">
-        <i class="fa fa-times" onclick="hideMenu()">close</i>
+        <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
           <li><a href="#content-profile">PROFILE</a></li>
           <li><a href="#content-education">EDUCATION</a></li>
@@ -39,16 +35,24 @@
           <li><a href="#lifestyle">LIFESTYLE</a></li>
         </ul>
       </div>
-      <i class="fa fa-bars" onclick="showMenu()">open</i>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
 
     <div class="welcome-msg">
       <h4>Hi There!</h4>
       <h1>I'm <span>Vuyani Ngcobo</span></h1>
       <p>Take a minute to know more about me.</p>
-      <a href="#content-profile" class="hero-btn">View Profile</a>
-      <a href="#contact" class="hero-btn">Hire me</a>
-      <a href="#contact" class="hero-btn">Download CV</a>
+      <a href="#content-profile" class="hero-btn primary-btn">
+        View Profile
+      </a>
+
+      <a href="#contact" class="hero-btn">
+        Hire Me
+      </a>
+
+      <a href="files/Vuyani-Ngcobo-CV.pdf" class="hero-btn">
+        Download CV
+      </a>
     </div>
 
     <div class="social">
@@ -66,7 +70,7 @@
     <p>
       Hi! <br />
       This is Vuyani Ngcobo, a
-      <strong>TUT Computer Science graduate</strong> - 2024.<br />
+      <strong>TUT Alumni (Computer Science)</strong> - 2024.<br />
       I am thrilled to have this opportunity to share a bit about myself with
       you.<br /><br />
 
@@ -110,20 +114,20 @@
       </div>
 
       <div class="row-col">
-        <h3>Future Aspirations and Career</h2>
-          <p>
-            As i look towards the future, i am excited about being the best data
-            engineer. well, its not just about the job. Data engineering is the
-            backbone of data-driven decision-making, transforming raw
-            information into valuable insights that drive progress and
-            innovation, so its about contributing meaningfully, making positive
-            impact and continuously evolving in the ever changing landscape.
-          </p>
+        <h3>Future Aspirations and Career</h3>
+        <p>
+          As i look towards the future, i am excited about being the best data
+          engineer. well, its not just about the job. Data engineering is the
+          backbone of data-driven decision-making, transforming raw
+          information into valuable insights that drive progress and
+          innovation, so its about contributing meaningfully, making positive
+          impact and continuously evolving in the ever changing landscape.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-----------------------------------Content - Profile Section--------------------------------------------->
+  <!-----------------------------------Content - Education Section--------------------------------------------->
   <section class="content-education" id="content-education">
     <h1>Educational Background</h1>
     <p>I started attending school in 2003, at UFasimba Primary School, which forms the base which is
@@ -184,7 +188,7 @@
   </section>
   <!-----------------------------------Content - Experience Section--------------------------------------------->
   <section class="content-experience">
-   
+
   </section>
   <!-----------------------------------LifeStyle - Community- Reviews Section--------------------------------------------->
   <section class="lifestyle" id="lifestyle">
@@ -199,71 +203,55 @@
       express yourself regarding any encounter you may have had with me.
     </p>
     <div class="reviews">
-      <div class="row">
-        <div class="review-col">
-          <img src="Images/ProfilePicture.JPG" alt="user">
-          <div>
-            <p>The guy is super amazing!!! Fun to work with and super smart.</p>
-            <h6>Friend</h6>
-            <h3>Elon Musk</h3>
-          </div>
-        </div>
-
-        <div class="review-col">
-          <img src="Images/ProfilePicture.JPG" alt="user">
-          <div>
-            <p>I love the guy, He's open and fun.
-              I love the guy, He's open and fun.
-            </p>
-            <h6>Friend</h6>
-            <h3>Bill Gates</h3>
-          </div>
-        </div>
+      <div class="row" id="reviews-list">
+        <p id="reviews-loading">Loading reviews...</p>
       </div>
     </div>
     <div class="form-container">
       <div class="review-form">
         <h3>Write Your Review Below.</h3>
-        <form>
-          <label for="fullNames">Names: (optional)</label>
-          <input type="text" id="fullNames" name="fullNames">
+        <form id="review-form">
+          <label for="reviewName">Names: (optional)</label>
+          <input type="text" id="reviewName" name="fullNames">
 
-          <label for="relationship">Relationship: (friend, colleague, acquaintance etc..)</label>
-          <input type="text" id="relationship" name="relationship">
+          <label for="reviewRelationship">Relationship: (friend, colleague, acquaintance etc..)</label>
+          <input type="text" id="reviewRelationship" name="relationship">
 
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+          <label for="reviewMessage">Message:</label>
+          <textarea id="reviewMessage" name="message" rows="4" required></textarea>
 
-          <label for="image">Upload your Photo to let the community know its you. (optional)</label>
-          <input type="image" id="image" name="image" alt="profilePhoto">
+          <label for="reviewPhoto">Upload your Photo to let the community know its you. (optional)</label>
+          <input type="file" id="reviewPhoto" name="image" accept="image/*">
 
-          <button type="submit" onclick="submitReview()">Comment</button>
+          <button type="submit" id="review-submit-btn">Comment</button>
+          <p id="review-status" style="display:none;"></p>
         </form>
       </div>
 
     </div>
-    
+
   </section>
 
 
-  <!-------------------------------------Call to Action Section--------------------------->
+  <!-------------------------------------Contact Section--------------------------->
 
   <section class="contact" id="contact">
     <h1>Got Business? Get In Touch.</h1>
 
     <div class="review-form">
-      <h3>Write Your Review Below.</h3>
-      <form>
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
+      <h3>Send Me A Message</h3>
+      <form id="contact-form">
+        <label for="contactEmail">Your Email:</label>
+        <input type="email" id="contactEmail" name="email" required>
 
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required>
+        <label for="contactSubject">Subject:</label>
+        <input type="text" id="contactSubject" name="subject" required>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <label for="contactMessage">Message:</label>
+        <textarea id="contactMessage" name="message" rows="4" required></textarea>
 
-        <button type="submit" onclick="submitReview()">Send Email</button>
+        <button type="submit" id="contact-submit-btn">Send Email</button>
+        <p id="contact-status" style="display:none;"></p>
       </form>
     </div>
 
@@ -283,6 +271,10 @@
     </div>
   </section>
 
+  <!-----------Firebase SDKs (for reviews)------------>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
 
   <!-----------JavaScript------------>
   <script>
@@ -295,6 +287,149 @@
     function hideMenu() {
       navLinks.style.right = "-200px";
     }
+
+    // ===================================================================
+    // CONFIG — replace these two placeholders before deploying
+    // ===================================================================
+    const CONTACT_FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // <-- from formspree.io
+
+    const FIREBASE_CONFIG = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID",
+    };
+    // ===================================================================
+
+    firebase.initializeApp(FIREBASE_CONFIG);
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+
+    function escapeHtml(str) {
+      const div = document.createElement("div");
+      div.textContent = str || "";
+      return div.innerHTML;
+    }
+
+    // --- Load and display approved reviews ---
+    async function loadReviews() {
+      const listEl = document.getElementById("reviews-list");
+      try {
+        const snapshot = await db.collection("reviews")
+          .where("status", "==", "approved")
+          .orderBy("createdAt", "desc")
+          .get();
+
+        if (snapshot.empty) {
+          listEl.innerHTML = "<p>No reviews yet — be the first!</p>";
+          return;
+        }
+
+        listEl.innerHTML = "";
+        snapshot.forEach((doc) => {
+          const r = doc.data();
+          const col = document.createElement("div");
+          col.className = "review-col";
+          col.innerHTML = `
+            <img src="${r.photoURL ? escapeHtml(r.photoURL) : "Images/ProfilePicture.JPG"}" alt="user">
+            <div>
+              <p>${escapeHtml(r.message)}</p>
+              <h6>${escapeHtml(r.relationship || "")}</h6>
+              <h3>${escapeHtml(r.fullNames) || "Anonymous"}</h3>
+            </div>
+          `;
+          listEl.appendChild(col);
+        });
+      } catch (err) {
+        listEl.innerHTML = "<p>Couldn't load reviews right now.</p>";
+        console.error(err);
+      }
+    }
+
+    // --- Submit a new review (goes to pending, with optional photo) ---
+    document.getElementById("review-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const button = document.getElementById("review-submit-btn");
+      const statusEl = document.getElementById("review-status");
+      const fullNames = document.getElementById("reviewName").value.trim();
+      const relationship = document.getElementById("reviewRelationship").value.trim();
+      const message = document.getElementById("reviewMessage").value.trim();
+      const photoFile = document.getElementById("reviewPhoto").files[0];
+
+      button.disabled = true;
+      statusEl.style.display = "none";
+
+      try {
+        // Create the review doc first to get an ID
+        const docRef = await db.collection("reviews").add({
+          fullNames,
+          relationship,
+          message,
+          photoURL: null,
+          status: "pending",
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+
+        // If a photo was attached, upload it and attach the URL
+        if (photoFile) {
+          if (photoFile.size > 5 * 1024 * 1024) {
+            throw new Error("Photo must be under 5MB");
+          }
+          const storageRef = storage.ref(`review-photos/${docRef.id}`);
+          await storageRef.put(photoFile);
+          const photoURL = await storageRef.getDownloadURL();
+          await docRef.update({ photoURL });
+        }
+
+        statusEl.textContent = "Thanks! Your review will appear once it's approved.";
+        statusEl.className = "success";
+        e.target.reset();
+      } catch (err) {
+        statusEl.textContent = "Something went wrong submitting your review: " + err.message;
+        statusEl.className = "error";
+        console.error(err);
+      } finally {
+        statusEl.style.display = "block";
+        button.disabled = false;
+      }
+    });
+
+    // --- Contact form (Formspree, no backend) ---
+    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const statusEl = document.getElementById("contact-status");
+      const button = document.getElementById("contact-submit-btn");
+
+      button.disabled = true;
+      statusEl.style.display = "none";
+
+      try {
+        const response = await fetch(CONTACT_FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new FormData(form),
+        });
+
+        if (response.ok) {
+          statusEl.textContent = "Thanks — your message has been sent!";
+          statusEl.className = "success";
+          form.reset();
+        } else {
+          throw new Error("Submission failed");
+        }
+      } catch (err) {
+        statusEl.textContent = "Something went wrong. Please try again.";
+        statusEl.className = "error";
+      } finally {
+        statusEl.style.display = "block";
+        button.disabled = false;
+      }
+    });
+
+    loadReviews();
   </script>
 </body>
 

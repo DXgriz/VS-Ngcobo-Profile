@@ -1,0 +1,22 @@
+rules_version = '2';
+
+// Paste this into Firebase Console > Storage > Rules
+//
+// Behavior:
+// - Anyone can upload a photo to review-photos/{reviewId}, but only
+//   an image file under 5MB
+// - Anyone can view photos (needed so approved reviews display them)
+// - Only you (signed in) can delete photos
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /review-photos/{reviewId} {
+      allow read: if true;
+
+      allow write: if request.resource.size < 5 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+
+      allow delete: if request.auth != null;
+    }
+  }
+}

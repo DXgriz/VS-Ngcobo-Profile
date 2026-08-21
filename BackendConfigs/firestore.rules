@@ -1,0 +1,36 @@
+rules_version = '2';
+
+// Paste this into Firebase Console > Firestore Database > Rules
+//
+// Behavior:
+// - Anyone can SUBMIT a review (status is forced to "pending" server-side via rule)
+// - Anyone can READ a review only if its status is "approved"
+// - Only YOU (logged-in via Firebase Auth) can update status or delete reviews
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /reviews/{reviewId} {
+
+      // Public can create a new review, but only as "pending" —
+      // this stops people from posting and instantly marking themselves approved.
+      allow create: if request.resource.data.status == "pending"
+                    && request.resource.data.message is string
+                    && request.resource.data.message.size() < 2000
+                    && (!("fullNames" in request.resource.data) || request.resource.data.fullNames.size() < 100);
+
+      // Public can update ONLY their own pending review to attach a photoURL
+      // right after creation (needed because the photo uploads after the doc is created).
+      allow update: if request.auth == null
+                    && resource.data.status == "pending"
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["photoURL"]);
+
+      // Public can only read approved reviews.
+      allow read: if resource.data.status == "approved"
+                  || request.auth != null;
+
+      // Only a signed-in user (you) can approve/reject/delete (any other update).
+      allow update, delete: if request.auth != null;
+    }
+  }
+}
