@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
     rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -26,21 +26,26 @@
       background: #12131c;
       color: #e4e6f1;
     }
-    .portfolio h1 { color: #f5f6fb; }
-    .portfolio > p {
+
+    .portfolio h1 {
+      color: #f5f6fb;
+    }
+
+    .portfolio>p {
       color: #8b8fa3;
       max-width: 620px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.9rem;
       line-height: 1.6;
     }
+
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
       margin-top: 36px;
     }
- 
+
     .project-card {
       --accent: #999;
       background: #1a1c28;
@@ -51,12 +56,13 @@
       flex-direction: column;
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
+
     .project-card:hover {
       transform: translateY(-6px);
       border-color: var(--accent);
       box-shadow: 0 14px 34px -10px color-mix(in srgb, var(--accent) 55%, transparent);
     }
- 
+
     /* Terminal window chrome */
     .card-titlebar {
       display: flex;
@@ -66,13 +72,33 @@
       background: #14151f;
       border-bottom: 1px solid #2b2e40;
     }
-    .card-titlebar .dot { width: 10px; height: 10px; border-radius: 50%; }
-    .card-titlebar .dot:nth-child(1) { background: #ff5f56; }
-    .card-titlebar .dot:nth-child(2) { background: #ffbd2e; }
-    .card-titlebar .dot:nth-child(3) { background: #27c93f; }
- 
-    .card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1; }
- 
+
+    .card-titlebar .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .card-titlebar .dot:nth-child(1) {
+      background: #ff5f56;
+    }
+
+    .card-titlebar .dot:nth-child(2) {
+      background: #ffbd2e;
+    }
+
+    .card-titlebar .dot:nth-child(3) {
+      background: #27c93f;
+    }
+
+    .card-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-grow: 1;
+    }
+
     .file-name {
       margin: 0;
       font-family: 'JetBrains Mono', monospace;
@@ -83,18 +109,31 @@
       align-items: baseline;
       gap: 2px;
     }
-    .file-name .ext { color: var(--accent); }
+
+    .file-name .ext {
+      color: var(--accent);
+    }
+
     .file-name .cursor {
       display: inline-block;
-      width: 8px; height: 1.1em;
+      width: 8px;
+      height: 1.1em;
       background: var(--accent);
       margin-left: 4px;
       opacity: 0;
       animation: blink 1s steps(1) infinite;
     }
-    .project-card:hover .file-name .cursor { opacity: 1; }
-    @keyframes blink { 50% { opacity: 0; } }
- 
+
+    .project-card:hover .file-name .cursor {
+      opacity: 1;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
     .project-card p.desc {
       margin: 0;
       color: #a6adc8;
@@ -102,16 +141,37 @@
       line-height: 1.55;
       flex-grow: 1;
     }
- 
+
     .project-meta {
-      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem; color: #7d8299;
+      font-size: 0.78rem;
+      color: #7d8299;
     }
-    .project-lang { display: flex; align-items: center; gap: 6px; }
-    .lang-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; background: var(--accent); }
- 
-    .project-links { display: flex; gap: 10px; margin-top: 4px; }
+
+    .project-lang {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+      background: var(--accent);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
     .project-links a {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
@@ -122,16 +182,27 @@
       color: #e4e6f1;
       transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     }
+
     .project-links a.primary {
       background: var(--accent);
       border-color: var(--accent);
       color: #12131c;
       font-weight: 600;
     }
-    .project-links a:not(.primary):hover { border-color: var(--accent); color: var(--accent); }
-    .project-links a.primary:hover { filter: brightness(1.1); }
- 
-    #portfolio-loading { font-family: 'JetBrains Mono', monospace; color: #8b8fa3; }
+
+    .project-links a:not(.primary):hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .project-links a.primary:hover {
+      filter: brightness(1.1);
+    }
+
+    #portfolio-loading {
+      font-family: 'JetBrains Mono', monospace;
+      color: #8b8fa3;
+    }
   </style>
 
 </head>
@@ -179,7 +250,9 @@
       <a href="#"><i class="ri-instagram-fill"></i></a>
       <a href="#"><i class="ri-twitter-fill"></i></a>
       <a href="#"><i class="ri-youtube-fill"></i></a>
-      <a href="www.linkedin.com/in/vuyani-ngcobo-sbo"><i class="ri-linkedin-fill"></i></a>
+      <a href="https://www.linkedin.com/in/vuyani-ngcobo-sbo" target="_blank" rel="noopener noreferrer">
+        <i class="ri-linkedin-fill"></i>
+      </a>
     </div>
   </section>
   <!-----------------------------------Content - Profile Section--------------------------------------------->
@@ -310,7 +383,7 @@
 
   </section>
 
-   <!-----------------------------------Portfolio Section--------------------------------------------->
+  <!-----------------------------------Portfolio Section--------------------------------------------->
   <section class="portfolio" id="portfolio">
     <h1>Portfolio</h1>
     <p>A live pull from my GitHub — every public repo I've pushed to, with its description
@@ -395,7 +468,7 @@
         <i class="fa fa-twitter"></i>
         <i class="fa fa-instagram"></i>
         <i class="fa fa-linkedin">
-          <a href="www.linkedin.com/in/vuyani-ngcobo-sbo"></a>
+          <a href="https://www.linkedin.com/in/vuyani-ngcobo-sbo" target="_blank" rel="noopener noreferrer">
         </i>
       </div>
       <p>&copy; 2024 Vuyani.</p>
@@ -569,67 +642,67 @@
     });
 
 
-      // --- Contact form (Formspree, no backend) ---
-      document.getElementById("contact-form").addEventListener("submit", async function (e) {
-        e.preventDefault();
-        const form = e.target;
-        const statusEl = document.getElementById("contact-status");
-        const button = document.getElementById("contact-submit-btn");
+    // --- Contact form (Formspree, no backend) ---
+    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const statusEl = document.getElementById("contact-status");
+      const button = document.getElementById("contact-submit-btn");
 
-        button.disabled = true;
-        statusEl.style.display = "none";
+      button.disabled = true;
+      statusEl.style.display = "none";
 
-        try {
-          const response = await fetch(CONTACT_FORM_ENDPOINT, {
-            method: "POST",
-            headers: { "Accept": "application/json" },
-            body: new FormData(form),
-          });
+      try {
+        const response = await fetch(CONTACT_FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new FormData(form),
+        });
 
-          if (response.ok) {
-            statusEl.textContent = "Thanks — your message has been sent!";
-            statusEl.className = "success";
-            form.reset();
-          } else {
-            throw new Error("Submission failed");
-          }
-        } catch (err) {
-          statusEl.textContent = "Something went wrong. Please try again.";
-          statusEl.className = "error";
-        } finally {
-          statusEl.style.display = "block";
-          button.disabled = false;
+        if (response.ok) {
+          statusEl.textContent = "Thanks — your message has been sent!";
+          statusEl.className = "success";
+          form.reset();
+        } else {
+          throw new Error("Submission failed");
         }
-      });
-      loadReviews();
+      } catch (err) {
+        statusEl.textContent = "Something went wrong. Please try again.";
+        statusEl.className = "error";
+      } finally {
+        statusEl.style.display = "block";
+        button.disabled = false;
+      }
+    });
+    loadReviews();
 
 
 
-          // --- Portfolio: pull public repos live from GitHub ---
+    // --- Portfolio: pull public repos live from GitHub ---
     const GITHUB_USERNAME = "DXgriz";
- 
+
     // If any repo doesn't have "homepage" set on GitHub but you DO have a
     // live demo somewhere, add it here: "repo-name": "https://your-demo-url"
     const MANUAL_DEMO_LINKS = {
       // "some-repo-name": "https://example.com",
     };
- 
+
     // Repos to hide from the portfolio (e.g. this profile site itself, forks you don't want shown)
     const HIDDEN_REPOS = ["VS-Ngcobo-Profile", "dxgriz.github.io", "dxgriz"];
- 
+
     const LANGUAGE_COLORS = {
       JavaScript: "#f1e05a", TypeScript: "#3178c6", Python: "#3572A5",
       HTML: "#e34c26", CSS: "#563d7c", Java: "#b07219", "C#": "#178600",
       "C++": "#f34b7d", C: "#555555", PHP: "#4F5D95", Ruby: "#701516",
       Go: "#00ADD8", Swift: "#F05138", Kotlin: "#A97BFF", Shell: "#89e051",
     };
- 
+
     const LANGUAGE_EXT = {
       JavaScript: "js", TypeScript: "ts", Python: "py", HTML: "html",
       CSS: "css", Java: "java", "C#": "cs", "C++": "cpp", C: "c",
       PHP: "php", Ruby: "rb", Go: "go", Swift: "swift", Kotlin: "kt", Shell: "sh",
     };
- 
+
     async function loadPortfolio() {
       const gridEl = document.getElementById("portfolio-grid");
       try {
@@ -638,23 +711,23 @@
         );
         if (!response.ok) throw new Error("GitHub API request failed");
         let repos = await response.json();
- 
+
         repos = repos
           .filter((r) => !r.fork)
           .filter((r) => !HIDDEN_REPOS.includes(r.name))
           .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
- 
+
         if (repos.length === 0) {
           gridEl.innerHTML = "<p>No public repositories found.</p>";
           return;
         }
- 
+
         gridEl.innerHTML = "";
         repos.forEach((repo) => {
           const demoUrl = repo.homepage || MANUAL_DEMO_LINKS[repo.name] || null;
           const langColor = LANGUAGE_COLORS[repo.language] || "#7d8299";
           const ext = LANGUAGE_EXT[repo.language] || "txt";
- 
+
           const card = document.createElement("div");
           card.className = "project-card";
           card.style.setProperty("--accent", langColor);
@@ -687,7 +760,7 @@
         console.error(err);
       }
     }
- 
+
     loadPortfolio();
 
   </script>
