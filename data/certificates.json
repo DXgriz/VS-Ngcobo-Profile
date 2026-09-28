@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Microsoft Certified: Azure Data Fundamentals",
+    "issuer": "Microsoft",
+    "category": "Data & Cloud",
+    "date": "November 2023",
+    "status": "Certified",
+    "file": "microsoft-azure-data-fundamentals"
+  },
+  {
+    "title": "Artificial Intelligence Guided Learning Experience",
+    "issuer": "SkillUp Online · IBM SkillsBuild",
+    "category": "Artificial Intelligence",
+    "date": "June — December 2024",
+    "status": "Completed",
+    "file": "skillup-ibm-artificial-intelligence"
+  },
+  {
+    "title": "Introduction to Python",
+    "issuer": "Sololearn",
+    "category": "Software Development",
+    "date": "March 2024",
+    "status": "Completed",
+    "file": "sololearn-introduction-to-python"
+  },
+  {
+    "title": "Python Intermediate",
+    "issuer": "Sololearn",
+    "category": "Software Development",
+    "date": "March 2024",
+    "status": "Completed",
+    "file": "sololearn-python-intermediate"
+  },
+  {
+    "title": "Introduction to Cybersecurity",
+    "issuer": "Cisco Networking Academy",
+    "category": "Cybersecurity",
+    "date": "November 2022",
+    "status": "Completed",
+    "file": "cisco-introduction-to-cybersecurity"
+  },
+  {
+    "title": "Secure Azure Services & Workloads with Microsoft Defender for Cloud",
+    "issuer": "Netcampus Group",
+    "category": "Cloud Security",
+    "date": "October 2024",
+    "status": "Attended",
+    "file": "netcampus-microsoft-defender-cloud"
+  }
+]

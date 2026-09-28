@@ -974,6 +974,54 @@ p {
    CERTIFICATIONS
    ========================================================= */
 
+   /* =========================================================
+   CERTIFICATE LOADING / ERROR
+   ========================================================= */
+
+.certificates-loading,
+.certificates-error {
+    grid-column: 1 / -1;
+
+    padding: 45px;
+
+    text-align: center;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+}
+
+.certificates-loading {
+    animation:
+        certificatePulse 1.5s ease-in-out infinite;
+}
+
+.certificates-error {
+    color: var(--hero-color);
+}
+
+
+@keyframes certificatePulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
 .certifications {
     margin-top: 110px;
 }
