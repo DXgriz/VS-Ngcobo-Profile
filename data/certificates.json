@@ -5,7 +5,7 @@
     "category": "Data & Cloud",
     "date": "November 2023",
     "status": "Certified",
-    "file": "microsoft-azure-data-fundamentals"
+    "file": "microsoft-azure-ML-Cert-VS-Ngcobo"
   },
   {
     "title": "Artificial Intelligence Guided Learning Experience",
@@ -13,7 +13,7 @@
     "category": "Artificial Intelligence",
     "date": "June — December 2024",
     "status": "Completed",
-    "file": "skillup-ibm-artificial-intelligence"
+    "file": "Vuyani-Ngcobo-AI-Fundamentals-Certificate"
   },
   {
     "title": "Introduction to Python",
@@ -21,7 +21,7 @@
     "category": "Software Development",
     "date": "March 2024",
     "status": "Completed",
-    "file": "sololearn-introduction-to-python"
+    "file": "sololearn-introduction-to-python-certificate"
   },
   {
     "title": "Python Intermediate",
@@ -29,7 +29,7 @@
     "category": "Software Development",
     "date": "March 2024",
     "status": "Completed",
-    "file": "sololearn-python-intermediate"
+    "file": "sololearn-python-intermediate-certificate"
   },
   {
     "title": "Introduction to Cybersecurity",
@@ -37,7 +37,7 @@
     "category": "Cybersecurity",
     "date": "November 2022",
     "status": "Completed",
-    "file": "cisco-introduction-to-cybersecurity"
+    "file": "VUYANINGCOBO-Information Secu-certificate"
   },
   {
     "title": "Secure Azure Services & Workloads with Microsoft Defender for Cloud",
@@ -45,6 +45,6 @@
     "category": "Cloud Security",
     "date": "October 2024",
     "status": "Attended",
-    "file": "netcampus-microsoft-defender-cloud"
+    "file": "VuyaniNetcampusCert"
   }
 ]
